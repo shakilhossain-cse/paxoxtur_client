@@ -4,7 +4,7 @@ import { NavHashLink } from "react-router-hash-link";
 
 const Header = () => {
   return (
-    <header className="text-white body-font bg-blue-500">
+    <header className="text-white body-font bg-blue-500 w-full fixed z-50">
       <div className="container md:w-5/6 mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link className="ml-3 text-2xl font-bold text-white" to="/">
           AMAZINGPARK
