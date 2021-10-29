@@ -1,9 +1,12 @@
 import React from 'react'
+import Banner from '../../components/Banner/Banner'
+import Rides from '../../components/Rides/Rides'
 
 const Home = () => {
     return (
-        <div>
-            
+        <div className="container md:w-5/6 mx-auto">
+            <Banner />
+            <Rides/>
         </div>
     )
 }
