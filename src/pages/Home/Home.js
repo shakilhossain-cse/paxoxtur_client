@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../../components/Banner/Banner'
 import Feedback from '../../components/Feedback/Feedback'
+import Patners from '../../components/Patners/Patners'
 import Rides from '../../components/Rides/Rides'
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner />
             <Rides />
             <Feedback />
+            <Patners/>
         </div>
     )
 }
