@@ -19,7 +19,7 @@ const Header = () => {
           <NavHashLink className="mr-5 hover:text-gray-900" to="/home#feedback">
             Feedback
           </NavHashLink>
-          <Link className="mr-5 hover:text-gray-900" link="/contact">
+          <Link className="mr-5 hover:text-gray-900" to="/contact">
             Contact Us
           </Link>
         </nav>
