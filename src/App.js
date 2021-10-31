@@ -7,6 +7,8 @@ import ContactUs from "./pages/Contact/ContactUs";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import RideDetiles from "./pages/RideDetiles/RideDetiles";
+import ManageApp from "./pages/ManageApp/ManageApp";
 import PrivetRoute from "./Route/PrivetRoute";
 
 function App() {
@@ -15,13 +17,31 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path={['/','/home']} component={Home} />
-          <PrivetRoute  path="/contact">
-            <ContactUs/>
+          <Route exact path={["/", "/home"]}>
+            <Home />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <PrivetRoute path="/contact">
+            <ContactUs />
           </PrivetRoute>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          {/* <PrivetRoute path='/rides/:id' component={ }/> */}
+
+          <PrivetRoute path="/ride/:id">
+            <RideDetiles />
+          </PrivetRoute>
+          <PrivetRoute path="/manageapp">
+            <ManageApp />
+          </PrivetRoute>
+          <PrivetRoute path="/addride">
+            <ManageApp />
+          </PrivetRoute>
+          <PrivetRoute path="/allorders">
+            <ManageApp />
+          </PrivetRoute>
         </Switch>
         <Footer />
       </Router>

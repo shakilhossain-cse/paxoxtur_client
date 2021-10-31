@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { useHistory, useLocation } from "react-router";
 
 const Login = () => {
-  const { loginWithGoogle, setUser } = useAuth();
+  const { loginWithGoogle, setUser,setIsLoading } = useAuth();
   const location = useLocation();
   const history = useHistory();
 
@@ -17,9 +17,9 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         history.push(url);
-      })
-      .catch((error) => {
-        setUser({});
+      }).finally(() => {
+        setIsLoading(false)
+        
       });
   };
   return (

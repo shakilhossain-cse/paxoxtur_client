@@ -7,7 +7,7 @@ const Header = () => {
   const { User, logOut } = useAuth();
 
   const logoutHandeler = () => {
-    logOut()
+    logOut();
   };
   return (
     <header className="text-white body-font bg-blue-500 w-full fixed z-50">
@@ -28,6 +28,19 @@ const Header = () => {
           <Link className="mr-5 hover:text-gray-900" to="/contact">
             Contact Us
           </Link>
+          {
+           User.email &&
+            <Link className="mr-5 hover:text-gray-900" to="/mytiket">
+              My Tiket
+            </Link>
+          }
+          
+          {
+            User.email && <Link className="mr-5 hover:text-gray-900" to="/manageapp">
+            Manage App
+          </Link> 
+          }
+
         </nav>
         {!User.email && (
           <Link
