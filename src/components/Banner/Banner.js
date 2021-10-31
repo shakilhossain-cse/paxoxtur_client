@@ -8,7 +8,7 @@ const Banner = () => {
           <img
             className="object-cover object-center rounded"
             alt="hero"
-            src="https://dummyimage.com/720x600"
+            src="https://cdn4.vectorstock.com/i/1000x1000/05/83/children-playing-in-the-park-vector-4650583.jpg"
           />
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">

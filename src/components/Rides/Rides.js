@@ -4,7 +4,7 @@ import Ride from "../Ride/Ride";
 const Rides = () => {
   const [Rides, setRides] = useState([]);
   useState(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("http://localhost:5000/allride")
       .then((res) => res.json())
       .then((data) => setRides(data))
       .catch(() => {

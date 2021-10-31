@@ -21,13 +21,12 @@ const Patners = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/200x200"
+                src="https://thumbs.dreamstime.com/z/young-professional-man-office-portrait-sitting-front-laptop-working-presentation-72835072.jpg"
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Holden Caulfield
                 </h2>
-                <h3 className="text-gray-500 mb-3">UI Developer</h3>
                 <p className="mb-4">
                   DIY tote bag drinking vinegar cronut adaptogen squid fanny
                   pack vaporware.
@@ -81,13 +80,12 @@ const Patners = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/201x201"
+                src="https://thumbs.dreamstime.com/z/young-male-professional-sitting-desk-office-portrait-businessman-working-table-smiling-good-mood-93168920.jpg"
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Alper Kamu
                 </h2>
-                <h3 className="text-gray-500 mb-3">Designer</h3>
                 <p className="mb-4">
                   DIY tote bag drinking vinegar cronut adaptogen squid fanny
                   pack vaporware.
@@ -141,13 +139,12 @@ const Patners = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/204x204"
+                src="https://previews.123rf.com/images/puhhha/puhhha1712/puhhha171200301/91510971-confident-male-worker-standing-in-office-portrait-of-successful-professional-smiling-business-man-in.jpg"
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Atticus Finch
                 </h2>
-                <h3 className="text-gray-500 mb-3">UI Developer</h3>
                 <p className="mb-4">
                   DIY tote bag drinking vinegar cronut adaptogen squid fanny
                   pack vaporware.
@@ -201,13 +198,12 @@ const Patners = () => {
               <img
                 alt="team"
                 className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src="https://dummyimage.com/206x206"
+                src="https://previews.123rf.com/images/jackf/jackf1908/jackf190804869/128517752-man-office-worker-in-grey-jacket-offering-one-s-hand.jpg"
               />
               <div className="flex-grow sm:pl-8">
                 <h2 className="title-font font-medium text-lg text-gray-900">
                   Henry Letham
                 </h2>
-                <h3 className="text-gray-500 mb-3">Designer</h3>
                 <p className="mb-4">
                   DIY tote bag drinking vinegar cronut adaptogen squid fanny
                   pack vaporware.

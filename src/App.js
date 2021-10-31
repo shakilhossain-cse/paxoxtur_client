@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import RideDetiles from "./pages/RideDetiles/RideDetiles";
 import ManageApp from "./pages/ManageApp/ManageApp";
 import PrivetRoute from "./Route/PrivetRoute";
+import MyTiket from "./pages/MyTiket/MyTiket";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
           </PrivetRoute>
           <PrivetRoute path="/allorders">
             <ManageApp />
+          </PrivetRoute>
+          <PrivetRoute path="/mytikets">
+            <MyTiket />
           </PrivetRoute>
         </Switch>
         <Footer />

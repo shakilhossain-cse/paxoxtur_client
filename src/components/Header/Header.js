@@ -30,7 +30,7 @@ const Header = () => {
           </Link>
           {
            User.email &&
-            <Link className="mr-5 hover:text-gray-900" to="/mytiket">
+            <Link className="mr-5 hover:text-gray-900" to="/mytikets">
               My Tiket
             </Link>
           }

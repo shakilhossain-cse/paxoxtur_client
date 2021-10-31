@@ -17,7 +17,11 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         history.push(url);
-      }).finally(() => {
+      })
+      .catch(() => {
+        
+      })
+      .finally(() => {
         setIsLoading(false)
         
       });
