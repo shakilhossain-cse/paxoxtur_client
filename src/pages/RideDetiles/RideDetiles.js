@@ -8,7 +8,7 @@ const RideDetiles = () => {
   const { User } = useFirebase();
   const [RideDetiles, setRideDetiles] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/ride/${id}`)
+    fetch(`https://frightful-labyrinth-33165.herokuapp.com/ride/${id}`)
       .then((res) => res.json())
       .then((data) => setRideDetiles(data))
       .catch(() => {
@@ -21,17 +21,17 @@ const RideDetiles = () => {
       userEmail: User.email,
       name: RideDetiles.name,
       image: RideDetiles.image,
-      status: 1
+      status: 1,
     };
-    fetch('http://localhost:5000/buyride', {
+    fetch("https://frightful-labyrinth-33165.herokuapp.com/buyride", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(detiles),
     })
-      .then(res => res.json())
-    .then(data => console.log(data))
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div className="pb-20 pt-32 container md:w-5/6 mx-auto">

@@ -3,21 +3,19 @@ import React from "react";
 const Orders = (props) => {
   const { name, userEmail, _id } = props.order;
   const deleteHandeler = (id) => {
-    const del = window.confirm('Are you sure to delete')
+    const del = window.confirm("Are you sure to delete");
     if (del) {
-      
-      fetch(`http://localhost:5000/ride/${id}`, {
+      fetch(`https://frightful-labyrinth-33165.herokuapp.com/ride/${id}`, {
         method: "DELETE",
-        
       })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          props.deleteHandelerFromUi(id);
-        }
-      });
-    };
-  }
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            props.deleteHandelerFromUi(id);
+          }
+        });
+    }
+  };
   return (
     <div className="p-2 sm:w-1/2 w-full">
       <div className="bg-gray-100 rounded flex p-4 h-full items-center">

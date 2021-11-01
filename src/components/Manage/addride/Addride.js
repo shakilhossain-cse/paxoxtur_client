@@ -1,20 +1,25 @@
 import React, { useRef } from "react";
-import { useHistory } from 'react-router';
+import { useHistory } from "react-router";
 
 const Addride = () => {
   const name = useRef();
   const price = useRef();
   const image = useRef();
   const describtion = useRef();
-  const history = useHistory()
+  const history = useHistory();
   const rideHandeler = (e) => {
     e.preventDefault();
-    const data ={name:name.current.value,price:price.current.value,image:image.current.value,describtion:describtion.current.value}
+    const data = {
+      name: name.current.value,
+      price: price.current.value,
+      image: image.current.value,
+      describtion: describtion.current.value,
+    };
 
     //   console.log(data);
 
-    fetch("http://localhost:5000/addride", {
-      method: "POST", // or 'PUT'
+    fetch("https://frightful-labyrinth-33165.herokuapp.com/addride", {
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
@@ -22,8 +27,8 @@ const Addride = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if(data.insertedId){
-            history.push('/manageapp/Viewride')
+        if (data.insertedId) {
+          history.push("/manageapp/Viewride");
         }
       });
   };

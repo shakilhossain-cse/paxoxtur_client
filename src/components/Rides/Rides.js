@@ -4,7 +4,7 @@ import Ride from "../Ride/Ride";
 const Rides = () => {
   const [Rides, setRides] = useState([]);
   useState(() => {
-    fetch("http://localhost:5000/allride")
+    fetch("https://frightful-labyrinth-33165.herokuapp.com/allride")
       .then((res) => res.json())
       .then((data) => setRides(data))
       .catch(() => {

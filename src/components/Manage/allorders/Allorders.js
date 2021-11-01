@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import Orders from "./Orders/Orders";
 
 const Allorders = () => {
-
   const [DisplayOrder, setDisplayOrder] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allorder`)
+    fetch(`https://frightful-labyrinth-33165.herokuapp.com/allorder`)
       .then((res) => res.json())
       .then((data) => {
         setDisplayOrder(data);

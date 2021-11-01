@@ -4,11 +4,11 @@ import RideData from "./RideData/RideData";
 const Viewride = () => {
   const [RideAllDatas, setRideAllDatas] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allride")
+    fetch("https://frightful-labyrinth-33165.herokuapp.com/allride")
       .then((res) => res.json())
       .then((data) => setRideAllDatas(data));
   }, []);
-  
+
   const deleteHandelerFromUi = (item) => {
     const removeItem = RideAllDatas.filter((Ride) => Ride._id != item);
     setRideAllDatas(removeItem);

@@ -7,11 +7,13 @@ const MyTiket = () => {
   const [orders, setOrders] = useState([]);
   const [DisplayOrder, setDisplayOrder] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/userorder/${User.email}`)
+    fetch(
+      `https://frightful-labyrinth-33165.herokuapp.com/userorder/${User.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
-        setOrders(data)
-        setDisplayOrder(data)
+        setOrders(data);
+        setDisplayOrder(data);
       });
   }, []);
 
