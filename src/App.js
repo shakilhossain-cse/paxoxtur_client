@@ -1,55 +1,24 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import AuthProvider from "./context/AuthProvider";
-import ContactUs from "./pages/Contact/ContactUs";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
-import RideDetiles from "./pages/RideDetiles/RideDetiles";
-import ManageApp from "./pages/ManageApp/ManageApp";
-import PrivetRoute from "./Route/PrivetRoute";
-import MyTiket from "./pages/MyTiket/MyTiket";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path={["/", "/home"]}>
-            <Home />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <PrivetRoute path="/contact">
-            <ContactUs />
-          </PrivetRoute>
-
-          <PrivetRoute path="/ride/:id">
-            <RideDetiles />
-          </PrivetRoute>
-          <PrivetRoute path="/manageapp">
-            <ManageApp />
-          </PrivetRoute>
-          <PrivetRoute path="/addride">
-            <ManageApp />
-          </PrivetRoute>
-          <PrivetRoute path="/allorders">
-            <ManageApp />
-          </PrivetRoute>
-          <PrivetRoute path="/mytikets">
-            <MyTiket />
-          </PrivetRoute>
-        </Switch>
-        <Footer />
-      </Router>
-    </AuthProvider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
