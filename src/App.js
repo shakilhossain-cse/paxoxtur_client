@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import About from "./pages/About/About";
+import Booking from "./pages/Booking/Booking";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/booking">
+          <Booking />
         </Route>
       </Switch>
       <Footer />
