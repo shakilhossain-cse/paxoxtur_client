@@ -38,6 +38,9 @@ function App() {
           <PrivetRoute path="/manage">
             <Manage />
           </PrivetRoute>
+          <Route path="/*">
+            <h1 className="py-5 bd-light text-center">404 Not Found</h1>
+          </Route>
         </Switch>
         <Footer />
       </AuthProvider>
