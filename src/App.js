@@ -29,7 +29,7 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <PrivetRoute path="/booking">
+          <PrivetRoute path="/booking/:id">
             <Booking />
           </PrivetRoute>
           <PrivetRoute path="/myorder">

@@ -1,41 +1,56 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
+import { useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const Booking = () => {
   const { user } = useAuth();
+  const { id } = useParams();
   const [number, setNumber] = useState();
+
+  const [destinations, setDestinations] = useState({});
+  useEffect(() => {
+    fetch(`https://frightful-labyrinth-33165.herokuapp.com/destination/${id}`)
+      .then((res) => res.json())
+      .then((data) => setDestinations(data));
+  }, []);
+
   const data = {
-    name: user.displayName,
+    destinationName: destinations.name,
+    destinationPrice: destinations.price,
+    destinationImage: destinations.image,
+    destinationDescribtion: destinations.describtion,
+    userName: user.displayName,
     email: user.email,
     number: number,
+    status: "pending",
   };
   const submitHandeler = (e) => {
     e.preventDefault();
-    console.log(data);
+    fetch("https://frightful-labyrinth-33165.herokuapp.com/bookingplace", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => alert("Congratulation You Booked a places"));
   };
+
   return (
     <div className="bg-light py-5">
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <img
-              src="http://www.emailmug.com/premium-template/bg/paxos/th.jpg"
-              alt=""
-              className="w-100"
-            />
+            <img src={destinations.image} alt="" className="w-100" />
             <hr />
-            <h2>Thailand Experience</h2>
+            <h2>{destinations.name}</h2>
             <div className="d-flex  my-4 align-items-center">
-              <h1 className="text-primary fw-5 ">$450</h1>
+              <h1 className="text-primary fw-5 ">${destinations.price}</h1>
               <h5 className="mx-3">3 days 2 nights</h5>
             </div>
-            <p>
-              Maecenas interdum consequat tellus vitae vehicula. Pellentesque
-              egestas.Maecenas interdum consequat tellus vitae vehicula.
-              Pellentesque egestas.Maecenas interdum consequat tellus vitae
-              vehicula. Pellentesque egestas.
-            </p>
+            <p>{destinations.describtion}</p>
           </Col>
           <Col xs={12} md={6}>
             <h2 className="text-center">YOUR INFO</h2>
