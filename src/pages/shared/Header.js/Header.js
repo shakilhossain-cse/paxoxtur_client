@@ -37,7 +37,12 @@ const Header = () => {
                 </Nav.Link>
               </>
             ) : (
-              <>
+              <>   <Nav.Link as={Link} to="/myorder">
+              My Order
+            </Nav.Link>
+                <Nav.Link as={Link} to="/manage">
+              Manage
+            </Nav.Link>
                 <Nav.Link className="fw-bold">{user.displayName}</Nav.Link>
                 <Nav.Link
                   onClick={() => logout()}

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const { loginuseingemail, loginwithgoogle } = useAuth();
   const [loginData, setLoginData] = useState();
+
+  const location = useLocation();
+  const history = useHistory();
+
   const handelChange = (e) => {
     const feild = e.target.name;
     const value = e.target.value;
@@ -15,7 +19,7 @@ const Login = () => {
   };
   const loginHandeler = (e) => {
     e.preventDefault();
-    loginuseingemail(loginData.email, loginData.password);
+    loginuseingemail(loginData.email, loginData.password, location, history);
     console.log(loginData);
   };
   return (
@@ -33,6 +37,7 @@ const Login = () => {
                 placeholder="Enter email"
                 name="email"
                 onBlur={handelChange}
+                required
               />
             </Form.Group>
 
@@ -43,6 +48,7 @@ const Login = () => {
                 placeholder="Password"
                 name="password"
                 onBlur={handelChange}
+                required
               />
             </Form.Group>
             <Form.Text className="text-muted">
@@ -54,7 +60,7 @@ const Login = () => {
             </Button>
             <Button
               variant="danger"
-              onClick={() => loginwithgoogle()}
+              onClick={() => loginwithgoogle(location, history)}
               className="w-100 mt-1  p-3"
             >
               COUTINUE WITH GOOGLE

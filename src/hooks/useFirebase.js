@@ -21,12 +21,14 @@ const useFirebase = () => {
   const auth = getAuth();
 
   // google Login
-  const loginwithgoogle = () => {
+  const loginwithgoogle = (location, history) => {
     setIsLoading(true);
     signInWithPopup(auth, GoogleProvider)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        const destination = location?.state?.from || "/";
+        history.replace(destination);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -61,13 +63,15 @@ const useFirebase = () => {
   };
 
   //   login useing email and password
-  const loginuseingemail = (email, password) => {
+  const loginuseingemail = (email, password, location, history) => {
+    console.log(email, password);
     setIsLoading(true);
-    console.log(email,password);
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        const destination = location?.state?.from || "/";
+        history.replace(destination);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -77,14 +81,15 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        setIsLoading(false);
       } else {
         setUser({});
       }
+      setIsLoading(false);
     });
+    return () => unsubscribe;
   }, []);
   //   Logout user
   const logout = () => {

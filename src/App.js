@@ -4,9 +4,12 @@ import About from "./pages/About/About";
 import Booking from "./pages/Booking/Booking";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import Manage from "./pages/Manage/Manage";
+import Myorder from "./pages/Myorder/Myorder";
 import Register from "./pages/Register/Register";
 import Footer from "./pages/shared/Footer.js/Footer";
 import Header from "./pages/shared/Header.js/Header";
+import PrivetRoute from "./Routes/PrivetRoute";
 
 function App() {
   return (
@@ -26,9 +29,15 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/booking">
+          <PrivetRoute path="/booking">
             <Booking />
-          </Route>
+          </PrivetRoute>
+          <PrivetRoute path="/myorder">
+            <Myorder />
+          </PrivetRoute>
+          <PrivetRoute path="/manage">
+            <Manage />
+          </PrivetRoute>
         </Switch>
         <Footer />
       </AuthProvider>
